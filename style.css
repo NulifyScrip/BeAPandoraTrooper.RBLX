@@ -1,0 +1,569 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light-blue: #88c4e9;
+    --dark-blue: #115884;
+    --nav-dark: #0e2138;
+    --footer-blue: #162d4b;
+    --orange: #e88b18;
+    --text: #333;
+    --black-card: #171717;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background: #fff;
+    color: var(--text);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar {
+    background: var(--dark-blue);
+    color: white;
+    font-size: 12px;
+}
+
+.top-bar .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 90px;
+    background: var(--light-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo a {
+    display: block;
+}
+
+.logo img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 25px;
+}
+
+.main-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item > a {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.nav-item > a:hover {
+    color: var(--dark-blue);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 280px;
+    background: var(--nav-dark);
+    list-style: none;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.25s ease;
+    z-index: 9999;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 16px 24px;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.dropdown-menu a::before {
+    content: "•";
+    margin-right: 12px;
+}
+
+.dropdown-menu a:hover {
+    background: #162d4b;
+}
+
+.apply-btn {
+    background: var(--dark-blue);
+    color: white;
+    padding: 18px 35px;
+    font-size: 20px;
+    font-weight: 800;
+    transition: 0.25s ease;
+}
+
+.apply-btn:hover {
+    transform: translateY(-2px);
+}
+
+.navbar.scrolled {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    height: 650px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 64px;
+    letter-spacing: 8px;
+    text-align: center;
+}
+
+/* =========================
+   HOME CARDS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card {
+    background: white;
+    text-align: center;
+    padding: 60px;
+    border: 1px solid #ddd;
+}
+
+.card h2 {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.card a {
+    color: var(--dark-blue);
+    font-weight: 500;
+}
+
+/* =========================
+   WHY SECTION
+========================= */
+
+.why-section {
+    padding: 100px 20px;
+}
+
+.why-card {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.why-image {
+    position: relative;
+    min-height: 500px;
+}
+
+.why-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.why-overlay {
+    position: absolute;
+    top: 70px;
+    left: 60px;
+    color: white;
+}
+
+.why-overlay h2 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.why-overlay p {
+    max-width: 450px;
+    font-size: 32px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.why-overlay button {
+    border: none;
+    background: var(--dark-blue);
+    color: white;
+    padding: 20px 40px;
+    font-size: 22px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* =========================
+   HOME CTA CARD
+========================= */
+
+.trooper-card {
+    background: #111;
+    color: white;
+    min-height: 500px;
+    padding: 45px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    text-align: center;
+}
+
+.trooper-card img {
+    width: 220px;
+}
+
+.trooper-card h3 {
+    font-size: 42px;
+    font-weight: 900;
+}
+
+.trooper-card a {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* =========================
+   STATE TROOPER PAGE
+========================= */
+
+.content-page {
+    background: white;
+}
+
+.page-title {
+    width: 90%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 55px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.page-title h4 {
+    font-size: 17px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.page-title h1 {
+    font-size: 62px;
+    font-weight: 300;
+}
+
+.state-layout {
+    width: 90%;
+    max-width: 1320px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+    gap: 60px;
+    align-items: start;
+}
+
+.state-text {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.state-text p {
+    margin-bottom: 30px;
+}
+
+.state-text h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 45px 0 20px;
+}
+
+.state-text hr {
+    border: none;
+    border-top: 1px solid #d6d6d6;
+    margin: 40px 0;
+}
+
+.state-text a {
+    color: var(--orange);
+}
+
+.state-text strong {
+    font-weight: 700;
+}
+
+.state-card {
+    background: var(--black-card);
+    color: white;
+    width: 100%;
+    min-height: 500px;
+    padding: 50px 35px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 130px;
+    align-self: start;
+}
+
+.state-card img {
+    width: 200px;
+    margin: 0 auto 40px;
+}
+
+.state-card h3 {
+    max-width: 310px;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.15;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.state-card a {
+    color: #9f9f9f;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.state-card a:hover {
+    color: white;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: var(--footer-blue);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    color: white;
+    font-weight: 700;
+}
+
+footer p {
+    color: #c9c9c9;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+    .top-bar .container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 12px 20px;
+    }
+
+    .top-bar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+    }
+
+    .logo img {
+        margin-top: 0;
+    }
+
+    .main-menu {
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-item > a {
+        height: 50px;
+        justify-content: center;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .apply-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero {
+        height: 420px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+        letter-spacing: 4px;
+    }
+
+    .cards,
+    .why-card,
+    .state-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 40px 20px;
+    }
+
+    .card h2 {
+        font-size: 36px;
+    }
+
+    .why-overlay {
+        top: 35px;
+        left: 30px;
+    }
+
+    .why-overlay h2 {
+        font-size: 42px;
+    }
+
+    .why-overlay p {
+        font-size: 22px;
+    }
+
+    .page-title h1 {
+        font-size: 46px;
+    }
+
+    .state-card {
+        min-height: auto;
+        position: static;
+    }
+}
+.dispatcher-banner {
+    width: 90%;
+    max-width: 1100px;
+    margin: 70px auto 45px;
+}
+
+.dispatcher-banner img {
+    width: 100%;
+    height: auto;
+}
